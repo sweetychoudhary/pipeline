@@ -27,7 +27,7 @@ pipeline {
 		}
 		stage('Deployment') {
 	    	steps {
-				sh 'scp target/gamutkart.war sweety@13.235.248.253:/root/opt/apache-tomcat-8.5.47/webapps'
+				sh 'sshpass -p "sweety" scp target/gamutkart.war sweety@13.235.248.253:/root/opt/apache-tomcat-8.5.47/webapps'
 				//sh 'sshpass -p "gamut" ssh -i cdepem.pem gamut@172.17.0.3 "JAVA_HOME=/home/gamut/Distros/jdk1.8.0_211" "/home/gamut/Distros/apache-tomcat-8.5.41/bin/startup.sh"'
 	    	}
 		}
